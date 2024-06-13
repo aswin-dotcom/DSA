@@ -10,7 +10,7 @@ class Main {
         System.out.println();
         for(int i=0;i<arr.length-1;i++){
             int lowestindex=i;
-            for(int j=i+1;j<arr.length;j++){
+            for(int j=i+1;j<arr.length-i;j++){
                 if(arr[lowestindex]>arr[j]){
                     lowestindex=j;
                 }
