@@ -1,0 +1,47 @@
+import java.util.*;
+class sort{
+    public int[] quicksort(int[] arr,int low,int heigh){
+        
+        int start = low;
+        int end = heigh;
+        int mid =(low+heigh)/2;
+        int pivot = arr[mid];
+        if(low>=heigh){
+            return arr;
+        }
+        
+        while(start<=end){
+            while(pivot>arr[start]){
+                start++;
+            }
+            while(pivot<arr[end]){
+                end--;
+            }
+         
+            if(start<=end){
+                int temp=0;
+                temp=arr[start];
+                arr[start]=arr[end];
+                
+                arr[end]=temp;
+                start++;
+                end--;
+            }
+          
+        }
+         
+        quicksort(arr,0,end);
+        quicksort(arr,start,heigh);
+        return arr;
+    }
+    
+}
+class Main {
+    public static void main(String args[]){
+        int arr[]={14,32,562,2,3,1};
+        sort s = new sort();
+        
+        System.out.println(Arrays.toString(s.quicksort(arr,0,arr.length-1)));
+        
+    }
+}
