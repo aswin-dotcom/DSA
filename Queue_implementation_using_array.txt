@@ -1,0 +1,41 @@
+import java.util.*;
+class Queue {
+	int[] arr= new int[5];
+	int eoq ;//end of queue
+	int soq;//start of queue
+	public Queue() {
+		eoq=0;
+		soq=0;
+	}
+
+
+	public void enqueue(int num) {
+		if(eoq>=arr.length) {
+			System.out.println("Queue is full");
+
+		} else {
+			arr[eoq++]=num;
+		}
+	}
+	public int dequeue() {
+		if(soq>=arr.length||soq>eoq || soq==0 && eoq == 0) {
+			System.out.println("Queue is empty");
+			return -1;
+		}
+		else {
+			return arr[soq++];
+		}
+	}
+
+}
+class Main {
+	public static void main(String[] args) {
+		Queue q =  new Queue();
+ 
+        q.enqueue(5);
+     
+
+
+		System.out.println(q.dequeue());
+	}
+}
