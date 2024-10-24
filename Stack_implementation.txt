@@ -1,0 +1,35 @@
+import java.util.*;
+class Stack{
+    int[] arr =new int[10];
+    int topofstack;
+    public Stack(){
+        topofstack=-1;
+    }
+    void push(int num){
+        if(topofstack==arr.length-1){
+            System.out.println("Stack is full");
+            
+        }else{
+            arr[++topofstack]=num;
+        }
+    }
+    int pop(){
+        if(topofstack<0){
+            System.out.println("stck is empty");
+            return -1;
+        }else{
+            return arr[topofstack--];
+            
+        }
+    }
+}
+class Main {
+     public static void main (String[] args) {
+         Stack s = new Stack();
+         s.push(32);
+         s.push(21);
+         s.push(2);
+         System.out.println(s.pop());
+        
+    }
+}
