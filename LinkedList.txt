@@ -1,0 +1,59 @@
+import java.util.*;
+class LinkedList {
+	Node head;
+	class Node {
+		int data;
+		Node address;
+		Node(int val) {
+			data=val;
+			address=null;
+		}
+	}
+	LinkedList() {
+		head=null;
+	}
+	public void  insertAtbegining(int val) {
+		Node newNode=new Node(val);
+		if(head==null) {
+			head=newNode;
+			newNode.address=null;
+		} else {
+			newNode.address=head;
+			head=newNode;
+		}
+
+	}
+	public void display() {
+		Node temp=head;
+		while(temp!=null) {
+			System.out.println(temp.data +" ");
+			temp=temp.address;
+		}
+	}
+	public void insertAtPosition(int val,int pos) {
+		Node newNode=new Node(val);
+		Node temp=head;
+		if(pos==0) {
+			insertAtbegining(val);
+		}
+		for(int i=1; i<=pos-1; i++) {
+			temp=temp.address;
+
+
+
+		}
+		newNode.address=temp.address;
+		temp.address=newNode;
+	}
+}
+class Main {
+	public static void main(String args[]) {
+		LinkedList linkedlist=new LinkedList();
+		linkedlist.insertAtbegining(2);
+		linkedlist.insertAtbegining(3);
+		linkedlist.insertAtbegining(5);
+		linkedlist.insertAtPosition(1,2);
+		linkedlist.display();
+
+	}
+}
